@@ -1,10 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CombineButton : MonoBehaviour
 {
     [SerializeField] private ReactionManager reactionManager;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private TextMeshProUGUI resultText;
 
     void Start()
     {
@@ -18,11 +20,14 @@ public class CombineButton : MonoBehaviour
 
         if (result != null)
         {
-            Debug.Log(result.name + " created!");
+            resultText.text = result.displayName;
+            Debug.Log($"DisplayName='{result.displayName}'");
         }
         else
         {
+            resultText.text = "Fail";
             Debug.Log("Fail");
         }
     }
+
 }
