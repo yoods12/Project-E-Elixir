@@ -1,25 +1,21 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ElementSelector : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private ElementSO element; // 이 버튼이 나타내는 원소
-    [SerializeField] private Text countText; // 선택된 원소의 개수를 표시할 UI 텍스트
+    [SerializeField] private ElementSO element;
+    [SerializeField] private Text countText;
 
-    private static Dictionary<ElementSO, int> selectedCounts = new Dictionary<ElementSO, int>(); // 선택된 원소와 개수를 저장
+    private static Dictionary<ElementSO, int> selectedCounts = new Dictionary<ElementSO, int>();
+
     void Start()
     {
         UpdateCountUI();
+        CraftingUI.UpdateSlots(GetSelectedElements());
     }
 
-    /// <summary>
-    /// IPointerClickHandler: 버튼을 왼클릭/우클릭 구분해서 처리
-    /// </summary>
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -34,7 +30,11 @@ public class ElementSelector : MonoBehaviour, IPointerClickHandler
             selectedCounts[element] = 0;
         selectedCounts[element]++;
         UpdateCountUI();
+
+        // 슬롯 UI 업데이트
+        CraftingUI.UpdateSlots(GetSelectedElements());
     }
+
     private void RemoveOne()
     {
         if (selectedCounts.ContainsKey(element) && selectedCounts[element] > 0)
@@ -44,11 +44,13 @@ public class ElementSelector : MonoBehaviour, IPointerClickHandler
                 selectedCounts.Remove(element);
         }
         UpdateCountUI();
+
+        // 슬롯 UI 업데이트
+        CraftingUI.UpdateSlots(GetSelectedElements());
     }
 
     private void UpdateCountUI()
     {
-        // 0개면 숨기고, 1개 이상이면 텍스트로 표시
         if (selectedCounts.TryGetValue(element, out int cnt) && cnt > 0)
         {
             countText.text = cnt.ToString();
@@ -59,9 +61,7 @@ public class ElementSelector : MonoBehaviour, IPointerClickHandler
             countText.gameObject.SetActive(false);
         }
     }
-    /// <summary>
-    /// 외부에서 현재 선택된 원소 리스트(중복 포함) 가져오기
-    /// </summary>
+
     public static List<ElementSO> GetSelectedElements()
     {
         var list = new List<ElementSO>();
@@ -70,4 +70,14 @@ public class ElementSelector : MonoBehaviour, IPointerClickHandler
                 list.Add(kv.Key);
         return list;
     }
+    public static void ClearSelection()
+    {
+        // 1) 데이터 초기화
+        selectedCounts.Clear();
+
+        // 2) 화면상의 모든 ElementSelector 를 찾아 UI 리셋
+        foreach (var sel in GameObject.FindObjectsOfType<ElementSelector>())
+            sel.UpdateCountUI();
+    }
+
 }

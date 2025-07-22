@@ -1,10 +1,12 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public void OnClickNewGame()
     {
-        Debug.Log("ªı ∞‘¿”");
+        SceneManager.LoadScene("Chemistry");
     }
     public void OnClickLoad()
     {

@@ -15,3 +15,4 @@ MonoBehaviour:
   symbol: H
   icon: {fileID: 0}
   id: 1
+  displayName: H

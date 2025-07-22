@@ -15,3 +15,4 @@ MonoBehaviour:
   symbol: He
   icon: {fileID: 0}
   id: 2
+  displayName: He
