@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class SettingsUI : MonoBehaviour
+public class ChemistrySettingsUI : MonoBehaviour
 {
     private Animator animator;
 
@@ -19,7 +18,7 @@ public class SettingsUI : MonoBehaviour
     private IEnumerator CloseAfterDelay()
     {
         animator.SetTrigger("close");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
         animator.ResetTrigger("close");
     }
