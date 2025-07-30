@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 253439fe57f678d478816359ad6817c6, type: 3}
-  m_Name: H2Recipes
+  m_Name: 001H2Recipes
   m_EditorClassIdentifier: 
   inputElements:
   - {fileID: 11400000, guid: 8915918b44a284947bca8c5d8475985a, type: 2}
