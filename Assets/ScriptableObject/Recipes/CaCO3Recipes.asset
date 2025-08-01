@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253439fe57f678d478816359ad6817c6, type: 3}
+  m_Name: CaCO3Recipes
+  m_EditorClassIdentifier: 
+  inputElements:
+  - {fileID: 11400000, guid: 67fd7e0793bcc5e4aa95e452d9bb03be, type: 2}
+  - {fileID: 11400000, guid: acfd9b270196df24aa53c0b0685fa00c, type: 2}
+  - {fileID: 11400000, guid: 73f777d1a1a098d46ba9192eba624363, type: 2}
+  inputCounts: 010000000100000003000000
+  resultMolecule: {fileID: 11400000, guid: f2be458c9fabecb43ae4e03541f3a2b9, type: 2}

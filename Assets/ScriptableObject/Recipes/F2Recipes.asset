@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253439fe57f678d478816359ad6817c6, type: 3}
+  m_Name: F2Recipes
+  m_EditorClassIdentifier: 
+  inputElements:
+  - {fileID: 11400000, guid: 5eb841f1a7cc29b47ac8f5ddf84e5a8a, type: 2}
+  inputCounts: 02000000
+  resultMolecule: {fileID: 11400000, guid: ad9d0dbd49595544eacc9afca0c5f2c9, type: 2}

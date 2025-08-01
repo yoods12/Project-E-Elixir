@@ -6,9 +6,15 @@ public class ReactionManager : MonoBehaviour
 {
     [SerializeField] private ReactionRecipeSO[] allRecipes;
     private Dictionary<string, MoleculeSO> recipeMap;
+    public static ReactionManager Instance { get; private set; }
 
     void Awake()
     {
+        // ΩÃ±€≈Ê
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         BuildRecipeMap();
     }
     private void BuildRecipeMap()
