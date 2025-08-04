@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96fe2ef1e745114da8a764d44d68340, type: 3}
+  m_Name: NH3
+  m_EditorClassIdentifier: 
+  level: 2
+  NpcName: Brenda
+  NpcIcon: {fileID: 0}
+  isCompleted: 0
+  hint:
+  - "\uB0A0\uC774 \uD654\uCC3D\uD558\uB124\uC694. \uAC04\uB9CC\uC5D0 \uC815\uC6D0\uC744
+    \uC190\uBCF4\uB824\uAD6C\uC694."
+  - "\uBE44\uB8CC\uC5D0 \uC4F0\uC77C\uC218 \uC788\uB294 \uAE30\uCCB4\uB97C \uB9CC\uB4E4\uC5B4\uC8FC\uC2E4\uB798\uC694?"
+  - "\uC9C8\uC18C\uAC00 \uB4E4\uC5B4\uC788\uACE0 \uC880 \uC790\uADF9\uC801\uC774\uC5D0\uC694."
+  - "\uC554\uBAA8\uB2C8\uC544\uC880 \uB9CC\uB4E4\uC5B4\uC8FC\uC2E4\uB798\uC694?"
+  requiredMolecules:
+  - {fileID: 11400000, guid: 37bacc12a03215e4ea7d68df28cf205e, type: 2}
+  requiredElements: []
+  isMandatory: 0

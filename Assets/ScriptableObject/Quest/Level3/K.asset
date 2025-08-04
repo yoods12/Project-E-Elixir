@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96fe2ef1e745114da8a764d44d68340, type: 3}
+  m_Name: K
+  m_EditorClassIdentifier: 
+  level: 3
+  NpcName: Isaac
+  NpcIcon: {fileID: 0}
+  isCompleted: 0
+  hint:
+  - "\uD750\uD750\uD750... \uC5ED\uC2DC \uC88B\uAD70, \uAC74\uAC15\uD55C\uAC74."
+  - "\uADE0\uD615\uC744 \uC7A1\uC544\uC8FC\uC9C0, \uCCB4\uB0B4 \uC774\uC628\uC758."
+  - "\uBC18\uC751\uC131\uC774 \uC544\uC8FC \uD06C\uC9C0, \uBB3C\uC5D0 \uB2FF\uC73C\uBA74
+    \uD3ED\uBC1C\uD560 \uC815\uB3C4\uB85C."
+  - "\uCE7C\uB968\uC744 \uB2EC\uB780 \uB9D0\uC774\uB2E4!"
+  requiredMolecules: []
+  requiredElements:
+  - {fileID: 11400000, guid: 20ec6932f0758db4680adc268c3d4d06, type: 2}
+  isMandatory: 0
