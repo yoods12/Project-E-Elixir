@@ -20,7 +20,7 @@ public class DayManager : MonoBehaviour
 
     private void Start()
     {
-
+        
     }
 
 }
