@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MainSettingsUI : MonoBehaviour
+public class MainGameStartUI : MonoBehaviour
 {
     private Animator animator;
 

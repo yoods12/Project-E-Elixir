@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e96fe2ef1e745114da8a764d44d68340, type: 3}
-  m_Name: H2
+  m_Name: H2O
   m_EditorClassIdentifier: 
-  level: 1
-  NpcName: Anna
+  level: 2
+  NpcName: Hang
   NpcIcon: {fileID: 0}
   isCompleted: 0
   hint:
-  - "\uC120\uC0DD\uB2D8\uC774 \uC900\uBE44\uBB3C \uC0AC\uC624\uB798\uC694."
-  - "\uAC00\uBCCD\uACE0, \uB208\uC5D0 \uC548 \uBCF4\uC774\uB294 \uAC78 \uCC3E\uACE0
-    \uC788\uC5B4\uC694."
-  - "\uD06C\uAE30\uAC00 \uC815\uB9D0 \uC791\uACE0 \uACF5\uAE30\uBCF4\uB2E4 \uAC00\uBCBC\uC6CC\uC694."
-  - "\uC218\uC18C \uB9CC\uB4E4\uC5B4\uC8FC\uC138\uC694."
+  - "\uC73C\u2026 \uBA38\uB9AC\uC57C\u2026."
+  - "\uC0B4\uB824\uBA74... \uC774\uAC70 \uC788\uC5B4\uC57C \uD574..."
+  - "\uC774\uAC74 \uC138\uAC00\uC9C0 \uD615\uD0DC\uB85C \uC874\uC7AC\uD560 \uC218
+    \uC788\uC5B4..."
+  - "\uBB3C... \uBB3C\uC880 \uC918...."
   requiredMolecules:
-  - {fileID: 11400000, guid: 9b0eecec405cd5b47b5ab576cb541348, type: 2}
+  - {fileID: 11400000, guid: 03b484975106a9b4ebe93e471af81be2, type: 2}
   requiredElements: []
   isMandatory: 1

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96fe2ef1e745114da8a764d44d68340, type: 3}
+  m_Name: CaCO3
+  m_EditorClassIdentifier: 
+  level: 3
+  NpcName: Fiona
+  NpcIcon: {fileID: 0}
+  isCompleted: 0
+  hint:
+  - "\uB355\uBD84\uC5D0 \uACF5\uBD80\uC5D0 \uC9D1\uC911\uD560 \uC218 \uC788\uC5C8\uC5B4\uC694!"
+  - "\uC870\uAC1C \uAECD\uB370\uAE30\uB098 \uB300\uB9AC\uC11D \uAC19\uC740 \uBB3C\uC9C8\uC774
+    \uD544\uC694\uD574\uC694."
+  - "\uCE58\uC57D\uC774\uB098 \uBD84\uD544\uC5D0 \uB4E4\uC5B4\uAC00\uB294 \uC11D\uD68C\uC11D\uC758
+    \uC8FC\uC131\uBD84\uC774\uC5D0\uC694."
+  - "\uD0C4\uC0B0\uCE7C\uC298 \uC8FC\uC2DC\uACA0\uC5B4\uC694?"
+  requiredMolecules:
+  - {fileID: 11400000, guid: f2be458c9fabecb43ae4e03541f3a2b9, type: 2}
+  requiredElements: []
+  isMandatory: 0
