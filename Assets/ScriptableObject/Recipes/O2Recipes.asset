@@ -15,4 +15,4 @@ MonoBehaviour:
   inputElements:
   - {fileID: 11400000, guid: 73f777d1a1a098d46ba9192eba624363, type: 2}
   inputCounts: 02000000
-  resultMolecule: {fileID: 11400000, guid: 5dfcd5eb72863664cbd2e183acbbef22, type: 2}
+  result: {fileID: 11400000, guid: 5dfcd5eb72863664cbd2e183acbbef22, type: 2}

@@ -4,7 +4,7 @@ using UnityEngine;
 public class ElementSO : ScriptableObject
 {
     public string symbol; // 원소 기호
-    public Sprite icon; // UI
+    public Sprite elementIcon; // UI
     public int id; // 내부 식별자
     public string displayName;
 }
