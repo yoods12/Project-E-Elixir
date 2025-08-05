@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 68329048e24c9d94ba7f87b4b9a530a4, type: 2}
   - {fileID: 11400000, guid: 73f777d1a1a098d46ba9192eba624363, type: 2}
   inputCounts: 020000000100000004000000
-  resultMolecule: {fileID: 11400000, guid: 83c4f54235a4d0f439d07609ab0b699b, type: 2}
+  result: {fileID: 11400000, guid: 83c4f54235a4d0f439d07609ab0b699b, type: 2}

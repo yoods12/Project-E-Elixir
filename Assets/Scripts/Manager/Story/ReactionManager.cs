@@ -1,58 +1,84 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class ReactionManager : MonoBehaviour
 {
+    [Header("ëª¨ë“  ë ˆì‹œí”¼ (Input â†’ ê²°ê³¼ SO)")]
     [SerializeField] private ReactionRecipeSO[] allRecipes;
-    private Dictionary<string, MoleculeSO> recipeMap;
+
+    // key: "id1:count1,id2:count2,..." â†’ value: ElementSO or MoleculeSO
+    private Dictionary<string, ScriptableObject> recipeMap;
+
     public static ReactionManager Instance { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
-        // ½Ì±ÛÅæ
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        // ì‹±ê¸€í†¤ ì„¤ì •
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
         BuildRecipeMap();
     }
+
     private void BuildRecipeMap()
     {
-        recipeMap = new Dictionary<string, MoleculeSO>();
+        recipeMap = new Dictionary<string, ScriptableObject>();
 
-        foreach(var r in allRecipes) // ¸ğµç ·¹½ÃÇÇ ¼øÈ¸
+        foreach (var r in allRecipes)
         {
+            // 1) "id:count" ìŒ ìƒì„±
             var pairs = new List<string>();
-            for(int i = 0; i<r.inputElements.Count; i++)
-            {
-                // "¿ø¼ÒID:°³¼ö" ÇüÅÂ·Î ¹®ÀÚ¿­ »ı¼º
+            for (int i = 0; i < r.inputElements.Count; i++)
                 pairs.Add($"{r.inputElements[i].id}:{r.inputCounts[i]}");
-            }
 
-            pairs.Sort(); // Á¤·Ä
+            // 2) ì •ë ¬ í›„ key ìƒì„±
+            pairs.Sort();
+            var key = string.Join(",", pairs);
 
-            var key = string.Join(",", pairs); // ","·Î ¿¬°áÇÏ¿© Å° »ı¼º
-
-            recipeMap[key] = r.resultMolecule; // °á°ú ºĞÀÚ ÀúÀå
+            // 3) ë ˆì‹œí”¼ ë§µì— ë“±ë¡ (r.resultëŠ” ScriptableObjectâ€”ElementSO ë˜ëŠ” MoleculeSO)
+            recipeMap[key] = r.result;
         }
     }
 
-    public MoleculeSO Combine(List<ElementSO> selected)
+    /// <summary>
+    /// ì„ íƒëœ ì›ì†Œ ë¦¬ìŠ¤íŠ¸ë¡œ í•©ì„± ì‹œë„.
+    /// ì„±ê³µí•˜ë©´ ElementSO ë˜ëŠ” MoleculeSO (ScriptableObject), ì‹¤íŒ¨í•˜ë©´ null.
+    /// </summary>
+    public ScriptableObject Combine(List<ElementSO> selected)
     {
+        // 1) ì„ íƒëœ ì›ì†Œë“¤ì˜ ê°œìˆ˜ë¥¼ ì„¼ë‹¤
         var countMap = new Dictionary<int, int>();
-        // ¼±ÅÃµÈ ¿ø¼ÒµéÀÇ °³¼ö¸¦ ¼¼´Â µñ¼Å³Ê¸®
         foreach (var e in selected)
         {
             if (!countMap.ContainsKey(e.id)) countMap[e.id] = 0;
             countMap[e.id]++;
         }
 
-        // µñ¼Å³Ê¸®¸¦ Á¤·ÄÇÏ¿© Å° »ı¼º
-        var key = string.Join(",", countMap.Select(kv => $"{kv.Key}:{kv.Value}").OrderBy(s => s));
+        // 2) ë§Œì•½ â€œí•œ ê°€ì§€ ì›ì†Œ(id)ê°€ 1ê°œë§Œâ€ ì„ íƒëœ ê²½ìš°, ê·¸ ElementSO ìì²´ë¥¼ ë°˜í™˜
+        if (countMap.Count == 1 && countMap.Values.First() == 1)
+        {
+            // selected ë¦¬ìŠ¤íŠ¸ì— ìˆëŠ” ê·¸ ì›ì†Œë¥¼ ê·¸ëŒ€ë¡œ ë°˜í™˜
+            return selected[0];
+        }
 
-        recipeMap.TryGetValue(key, out var molecule);
+        // 3) ê·¸ ì™¸ì—ëŠ” ê¸°ì¡´ ë ˆì‹œí”¼ ë§µìœ¼ë¡œ keyë¥¼ ë§Œë“¤ì–´ lookup
+        var parts = countMap
+            .Select(kv => $"{kv.Key}:{kv.Value}")
+            .OrderBy(s => s);
+        var key = string.Join(",", parts);
 
-        return molecule;
+        if (!recipeMap.TryGetValue(key, out var resultSO))
+        {
+            Debug.LogWarning($"[Combine] ë ˆì‹œí”¼ ì—†ìŒ: {key}");
+            return null;
+        }
+        return resultSO;
     }
+
 }

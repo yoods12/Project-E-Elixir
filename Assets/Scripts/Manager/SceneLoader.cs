@@ -15,4 +15,7 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     }
+    public void LoadChemistryScene() => SceneManager.LoadScene("Chemistry");
+    public void LoadCraftingScene() => SceneManager.LoadScene("Crafting");
+    public void LoadResultScene() => SceneManager.LoadScene("Result");
 }

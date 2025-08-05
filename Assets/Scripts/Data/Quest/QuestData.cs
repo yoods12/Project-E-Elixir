@@ -17,4 +17,5 @@ public class QuestData : ScriptableObject
     //public List<ItemSO> rewards; // 보상 아이템
     
     public bool isMandatory; // 필수 퀘스트 여부
+
 }
