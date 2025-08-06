@@ -11,6 +11,12 @@ public class DayManager : MonoBehaviour
     [SerializeField] private float completedWeight = 0.2f;
     [SerializeField] private float uncompletedWeight = 1f;
 
+    [SerializeField] private List<QuestData> level1MandatoryQuests; // 레벨 1 퀘스트
+    [SerializeField] private List<QuestData> level2MandatoryQuests; // 레벨 2 퀘스트
+    //[SerializeField] private List<QuestData> levelMandatory3Quests; // 레벨 3 퀘스트
+
+    private int currentLevel = 1; // 현재 레벨 (1로 시작)
+
     private List<QuestData> todaysQuests;
     private Dictionary<QuestData, bool> todaysResults;
     private int currentQuestIndex;
@@ -25,9 +31,33 @@ public class DayManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
 
-        // Awake 단계에서 하루 퀘스트 뽑기
+    /// <summary>
+    /// 새 게임: 저장 삭제, 퀘스트 클리어 플래그 리셋, 1레벨부터 시작
+    /// </summary>
+    public void StartNewGame()
+    {
+        // 1) 저장 데이터 삭제
+        SaveManager.Instance.DeleteSave();
+        // 2) SO상 isCompleted 플래그 모두 초기화
+        SaveManager.Instance.ResetAllQuests(allQuests);
+
+        currentLevel = 1;
+        SaveManager.Instance.SaveLevel(currentLevel);
+
         BeginDay();
+        SceneLoader.Instance.LoadChemistryScene();
+    }
+
+    /// <summary>
+    /// 이어하기: 저장된 레벨로 시작
+    /// </summary>
+    public void StartContinue(int savedLevel)
+    {
+        currentLevel = savedLevel;
+        BeginDay();
+        SceneLoader.Instance.LoadChemistryScene();
     }
 
     private void BeginDay()
@@ -35,7 +65,7 @@ public class DayManager : MonoBehaviour
         // 1) 오늘의 퀘스트 뽑기
         var candidates = new List<QuestData>();
         foreach (var q in allQuests)
-            if (q.level <= 1) candidates.Add(q);
+            if (q.level <= currentLevel) candidates.Add(q);
 
         todaysQuests = new List<QuestData>();
         for (int i = 0; i < Mathf.Min(dailyQuestCount, candidates.Count); i++)
@@ -71,7 +101,7 @@ public class DayManager : MonoBehaviour
     /// </summary>
     public QuestData GetCurrentQuest()
     {
-        // 만약 Awake에서 뽑히지 않았다면(테스트용으로 Chemistry 씬만 플레이했을 때)
+        // 만약 Start에서 뽑히지 않았다면(테스트용으로 Chemistry 씬만 플레이했을 때)
         if (todaysQuests == null || todaysQuests.Count == 0)
             BeginDay();
 
@@ -106,12 +136,55 @@ public class DayManager : MonoBehaviour
     public List<QuestData> GetTodaysQuests() => new List<QuestData>(todaysQuests);
     public bool GetResult(QuestData q) => todaysResults[q];
 
+    public void LevelCheck()
+    {
+        if(currentLevel == 1)
+        {
+            bool allCleared = true;
+            for (int i= 0; i < level1MandatoryQuests.Count; i++)
+            {
+                if(!level1MandatoryQuests[i].isCompleted)
+                {
+                    allCleared = false;
+                    break;
+                }
+            }
+            if(allCleared)
+            {
+                currentLevel = 2;
+                Debug.Log("레벨 1 퀘스트 모두 완료! 레벨 2로 넘어갑니다.");
+            }
+        }
+        else if(currentLevel == 2)
+        {
+            bool allCleared = true;
+            for (int i = 0; i < level2MandatoryQuests.Count; i++)
+            {
+                if (!level2MandatoryQuests[i].isCompleted)
+                {
+                    allCleared = false;
+                    break;
+                }
+            }
+            if (allCleared)
+            {
+                currentLevel = 3;
+                Debug.Log("레벨 2 퀘스트 모두 완료! 레벨 3로 넘어갑니다.");
+            }
+        }
+    }
     /// <summary>
     /// 결과 씬의 Next Day 버튼에서 호출
     /// </summary>
     public void OnNextDay()
     {
-        // (레벨업 로직 삽입 가능)
+        // 레벨업 체크
+        LevelCheck();
+
+        // 레벨이 올라갔으면 저장
+        SaveManager.Instance.SaveLevel(currentLevel);
+
+        // 다음 날
         BeginDay();
         SceneLoader.Instance.LoadChemistryScene();
     }
