@@ -14,8 +14,9 @@ public class QuestData : ScriptableObject
     public List<string> hint; // 힌트
     public List<MoleculeSO> requiredMolecules; // 요구 분자
     public List<ElementSO> requiredElements; // 요구 원소
-    //public List<ItemSO> rewards; // 보상 아이템
-    
+
+    public int goldReward; // 골드 보상
+
     public bool isMandatory; // 필수 퀘스트 여부
 
 }
