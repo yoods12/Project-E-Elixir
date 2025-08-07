@@ -43,6 +43,8 @@ public class DayManager : MonoBehaviour
         // 2) SO상 isCompleted 플래그 모두 초기화
         SaveManager.Instance.ResetAllQuests(allQuests);
 
+        DictionaryManager.Instance.ResetDictionary();
+
         currentLevel = 1;
         SaveManager.Instance.SaveLevel(currentLevel);
 

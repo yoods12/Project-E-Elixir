@@ -7,15 +7,16 @@ public class ChemistryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI npcNameText;
     [SerializeField] private TextMeshProUGUI hintText;
 
-    [SerializeField] private Button previousHintButton;
-    [SerializeField] private Button nextHintButton;
-
+    [SerializeField] private Button dictionaryButton;
 
     void Start()
     {
         var quest = DayManager.Instance.GetCurrentQuest();
         npcNameText.text = quest.NpcName;
         hintText.text = quest.hint.Count > 0 ? quest.hint[0] : "";
+
+        dictionaryButton.onClick.AddListener(() =>
+        SceneLoader.Instance.LoadDictionary());
     }
     public void PreviousHint()
     {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53249c14b7d738498030418113c0ba1, type: 3}
   m_Name: O2
   m_EditorClassIdentifier: 
-  formula: N2
-  icon: {fileID: 0}
-  displayName: N2
+  formula: O2
+  moleculeIcon: {fileID: 0}
+  displayName: O2
+  dictionaryId: 0

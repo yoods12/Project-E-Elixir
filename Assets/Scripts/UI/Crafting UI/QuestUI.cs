@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
 using TMPro;
-using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestUI : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class QuestUI : MonoBehaviour
             {
                 success = true; 
                 quest.isCompleted = true;
+                DictionaryManager.Instance.UnlockEntriesForQuest(quest);
             }
         }
         else if (product is ElementSO e)
@@ -62,6 +64,7 @@ public class QuestUI : MonoBehaviour
             {
                 success = true;
                 quest.isCompleted = true;
+                DictionaryManager.Instance.UnlockEntriesForQuest(quest);
             }
         }
 
@@ -70,5 +73,4 @@ public class QuestUI : MonoBehaviour
         Debug.Log($"[Combine] 성공 여부: {success}");
         DayManager.Instance.OnQuestAttempted(success);
     }
-
 }
