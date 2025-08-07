@@ -1998,8 +1998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcNameText: {fileID: 2098953112}
   hintText: {fileID: 994108213}
-  previousHintButton: {fileID: 0}
-  nextHintButton: {fileID: 0}
+  dictionaryButton: {fileID: 2075504193}
 --- !u!1 &1329844721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,7 +3294,6 @@ GameObject:
   - component: {fileID: 1878576654}
   - component: {fileID: 1878576655}
   - component: {fileID: 1878576656}
-  - component: {fileID: 1878576657}
   m_Layer: 5
   m_Name: Settings UI
   m_TagString: Untagged
@@ -3361,21 +3359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7276fa374824c47825e039353343e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1878576657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878576653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be7261a73ad6984ba3ae90fc70eddd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newGameButton: {fileID: 0}
-  continueButton: {fileID: 0}
-  allQuests: []
 --- !u!1 &1888361085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,7 +3599,6 @@ GameObject:
   - component: {fileID: 2075504192}
   - component: {fileID: 2075504191}
   - component: {fileID: 2075504193}
-  - component: {fileID: 2075504194}
   m_Layer: 5
   m_Name: Dictionary
   m_TagString: Untagged
@@ -3737,19 +3719,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2075504194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075504189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282551563ab3c954187336657ed8ad23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Dictionary
 --- !u!1 &2098953110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,8 +4083,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1878576657}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1878576656}
+        m_TargetAssemblyTypeName: ChemistrySettingsUI, Assembly-CSharp
         m_MethodName: OnClickQuit
         m_Mode: 1
         m_Arguments:

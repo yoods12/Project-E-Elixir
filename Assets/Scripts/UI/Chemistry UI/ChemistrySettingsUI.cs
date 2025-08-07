@@ -22,4 +22,12 @@ public class ChemistrySettingsUI : MonoBehaviour
         gameObject.SetActive(false);
         animator.ResetTrigger("close");
     }
+    public void OnClickQuit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

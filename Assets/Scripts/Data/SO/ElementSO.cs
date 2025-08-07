@@ -7,4 +7,6 @@ public class ElementSO : ScriptableObject
     public Sprite elementIcon; // UI
     public int id; // 내부 식별자
     public string displayName;
+
+    public int dictionaryId; // 사전에서의 ID
 }

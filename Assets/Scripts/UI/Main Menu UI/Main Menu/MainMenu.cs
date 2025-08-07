@@ -32,6 +32,8 @@ public class MainMenu : MonoBehaviour
         DayManager.Instance.StartNewGame();
         // 4) Chemistry æ¿¿∏∑Œ ¿Ãµø
         SceneLoader.Instance.LoadChemistryScene();
+
+
     }
     private void OnContinue()
     {

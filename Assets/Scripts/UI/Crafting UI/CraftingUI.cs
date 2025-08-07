@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CraftingUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] slotTexts;
+    [SerializeField] private Button dictionaryButton;
 
     private static CraftingUI _instance;
     private void Awake()
     {
         _instance = this;
+    }
+    void Start()
+    {
+        dictionaryButton.onClick.AddListener(() =>
+            SceneLoader.Instance.LoadDictionary());
     }
 
     public static void UpdateSlots(List<ElementSO> selected)
