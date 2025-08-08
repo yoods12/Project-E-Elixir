@@ -1615,7 +1615,7 @@ GameObject:
   - component: {fileID: 167650075}
   - component: {fileID: 167650074}
   m_Layer: 5
-  m_Name: Item Number
+  m_Name: Item Formula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1660,7 +1660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eec0688a1bff45e4db7f5bea37f8a350, type: 2}
   m_sharedMaterial: {fileID: 1924004591127820734, guid: eec0688a1bff45e4db7f5bea37f8a350, type: 2}
@@ -2317,7 +2317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &250568875
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2350,7 +2350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6467,7 +6467,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.6794, y: -159.18866}
-  m_SizeDelta: {x: 498.4589, y: 663.2968}
+  m_SizeDelta: {x: 498.4589, y: 632.2546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929719094
 MonoBehaviour:
@@ -6489,7 +6489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC5B4\uCA4C\uAD6C \uC800\uCA4C\uAD6C"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eec0688a1bff45e4db7f5bea37f8a350, type: 2}
   m_sharedMaterial: {fileID: 1924004591127820734, guid: eec0688a1bff45e4db7f5bea37f8a350, type: 2}
@@ -6516,8 +6516,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11483,7 +11483,7 @@ GameObject:
   - component: {fileID: 1731179671}
   - component: {fileID: 1731179670}
   m_Layer: 5
-  m_Name: Item Name
+  m_Name: Item KoreaName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11528,7 +11528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: H
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eec0688a1bff45e4db7f5bea37f8a350, type: 2}
   m_sharedMaterial: {fileID: 1924004591127820734, guid: eec0688a1bff45e4db7f5bea37f8a350, type: 2}
@@ -11555,8 +11555,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12997,6 +12997,7 @@ GameObject:
   - component: {fileID: 1933592717}
   - component: {fileID: 1933592716}
   - component: {fileID: 1933592720}
+  - component: {fileID: 1933592721}
   m_Layer: 5
   m_Name: DictionaryUI
   m_TagString: Untagged
@@ -13107,6 +13108,22 @@ MonoBehaviour:
   elementsContent: {fileID: 481734891}
   moleculesContent: {fileID: 481734891}
   backButton: {fileID: 1722840001}
+--- !u!114 &1933592721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933592715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061c7fc9510396c4e8a1579cead4467b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 250568876}
+  koreaName: {fileID: 1731179670}
+  formula: {fileID: 167650074}
+  descText: {fileID: 929719094}
 --- !u!1 &1970004383
 GameObject:
   m_ObjectHideFlags: 0

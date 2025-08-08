@@ -6,7 +6,8 @@ public class DayManager : MonoBehaviour
     public static DayManager Instance { get; private set; }
 
     [Header("QuestData SO 리스트 (1~3레벨, 총 32개)")]
-    [SerializeField] private QuestData[] allQuests;
+    [SerializeField] public QuestData[] allQuests;
+
     [SerializeField] private int dailyQuestCount = 3;
     [SerializeField] private float completedWeight = 0.2f;
     [SerializeField] private float uncompletedWeight = 1f;
@@ -16,7 +17,7 @@ public class DayManager : MonoBehaviour
     //[SerializeField] private List<QuestData> levelMandatory3Quests; // 레벨 3 퀘스트
 
     private int currentLevel = 1; // 현재 레벨 (1로 시작)
-
+    private int currentday = 1; // 현재 날짜 (1로 시작)
     private List<QuestData> todaysQuests;
     private Dictionary<QuestData, bool> todaysResults;
     private int currentQuestIndex;
@@ -44,9 +45,16 @@ public class DayManager : MonoBehaviour
         SaveManager.Instance.ResetAllQuests(allQuests);
 
         DictionaryManager.Instance.ResetDictionary();
-
+        currentday = 1;
         currentLevel = 1;
+
+        foreach (var go in GameObject.FindGameObjectsWithTag("Level2Element"))
+            go.SetActive(false);
+        foreach (var go in GameObject.FindGameObjectsWithTag("Level3Element"))
+            go.SetActive(false);
+
         SaveManager.Instance.SaveLevel(currentLevel);
+        SaveManager.Instance.SaveDay(currentday);
 
         BeginDay();
         SceneLoader.Instance.LoadChemistryScene();
@@ -151,11 +159,16 @@ public class DayManager : MonoBehaviour
                     break;
                 }
             }
-            if(allCleared)
+            if (allCleared)
             {
                 currentLevel = 2;
+
+                foreach (var go in GameObject.FindGameObjectsWithTag("Level2Element"))
+                    go.SetActive(true);
+
                 Debug.Log("레벨 1 퀘스트 모두 완료! 레벨 2로 넘어갑니다.");
             }
+
         }
         else if(currentLevel == 2)
         {
@@ -170,9 +183,14 @@ public class DayManager : MonoBehaviour
             }
             if (allCleared)
             {
-                currentLevel = 3;
+                currentLevel = 2;
+
+                foreach (var go in GameObject.FindGameObjectsWithTag("Level3Element"))
+                    go.SetActive(true);
+
                 Debug.Log("레벨 2 퀘스트 모두 완료! 레벨 3로 넘어갑니다.");
             }
+
         }
     }
     /// <summary>
@@ -180,11 +198,23 @@ public class DayManager : MonoBehaviour
     /// </summary>
     public void OnNextDay()
     {
+        for(int i = 0; i < todaysQuests.Count; i++)
+        {
+            // 퀘스트 완료 여부 저장
+            SaveManager.Instance.SaveCompleted(todaysQuests[i], todaysResults[todaysQuests[i]]);
+            if( todaysResults[todaysQuests[i]] )
+            {
+                // 퀘스트 완료 시 사전 항목 해제
+                DictionaryManager.Instance.UnlockEntriesForQuest(todaysQuests[i]);
+            }
+        }
+        currentday++;
         // 레벨업 체크
         LevelCheck();
-
         // 레벨이 올라갔으면 저장
         SaveManager.Instance.SaveLevel(currentLevel);
+        // 현재 날짜 저장
+        SaveManager.Instance.SaveDay(currentday);
 
         // 다음 날
         BeginDay();

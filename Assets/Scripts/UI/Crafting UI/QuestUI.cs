@@ -54,8 +54,6 @@ public class QuestUI : MonoBehaviour
             if (quest.requiredMolecules.Exists(r => r.name == m.name))
             {
                 success = true; 
-                quest.isCompleted = true;
-                DictionaryManager.Instance.UnlockEntriesForQuest(quest);
             }
         }
         else if (product is ElementSO e)
@@ -63,8 +61,6 @@ public class QuestUI : MonoBehaviour
             if (quest.requiredElements.Exists(r => r.name == e.name))
             {
                 success = true;
-                quest.isCompleted = true;
-                DictionaryManager.Instance.UnlockEntriesForQuest(quest);
             }
         }
 

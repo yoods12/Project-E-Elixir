@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: 17Cl
   m_EditorClassIdentifier: 
   symbol: Cl
-  icon: {fileID: 0}
+  elementIcon: {fileID: 0}
   id: 17
   displayName: Cl
+  koreaName: "\uC5FC\uC18C"
+  dictionaryId: 0
+  description: []

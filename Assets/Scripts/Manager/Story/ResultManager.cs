@@ -20,8 +20,6 @@ public class ResultManager : MonoBehaviour
         }
 
         nextDayButton.onClick.RemoveAllListeners();
-        nextDayButton.onClick.AddListener(() =>
-            DayManager.Instance.OnNextDay()
-        );
+        nextDayButton.onClick.AddListener(() => DayManager.Instance.OnNextDay());
     }
 }

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: 09F
   m_EditorClassIdentifier: 
   symbol: F
-  icon: {fileID: 0}
+  elementIcon: {fileID: 0}
   id: 9
   displayName: F
+  koreaName: "\uD50C\uB8E8\uC624\uB9B0"
+  dictionaryId: 0
+  description: []
