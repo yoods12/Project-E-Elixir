@@ -7,11 +7,10 @@ public class ClearSelectionButton : MonoBehaviour
 
     void Awake()
     {
-        clearButton.onClick.RemoveAllListeners();
         clearButton.onClick.AddListener(ClearSelection);
     }
 
-    private void ClearSelection()
+    public void ClearSelection()
     {
         // ElementSelector 쪽에서 선택 데이터 초기화
         ElementSelector.ClearSelection();

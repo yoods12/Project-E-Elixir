@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: 08O
   m_EditorClassIdentifier: 
   symbol: O
-  icon: {fileID: 0}
+  elementIcon: {fileID: 0}
   id: 8
   displayName: O
+  koreaName: "\uC0B0\uC18C"
+  dictionaryId: 0
+  description: []

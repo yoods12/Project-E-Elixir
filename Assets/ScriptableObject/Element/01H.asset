@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: 01H
   m_EditorClassIdentifier: 
   symbol: H
-  icon: {fileID: 0}
+  elementIcon: {fileID: 0}
   id: 1
   displayName: H
+  koreaName: "\uC218\uC18C"
+  dictionaryId: 0
+  description: []

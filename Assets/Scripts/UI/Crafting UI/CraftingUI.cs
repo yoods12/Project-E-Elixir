@@ -55,5 +55,4 @@ public class CraftingUI : MonoBehaviour
         UpdateSlots(new List<ElementSO>());
     }
 
-
 }

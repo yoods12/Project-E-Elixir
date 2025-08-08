@@ -26,4 +26,5 @@ MonoBehaviour:
   requiredMolecules: []
   requiredElements:
   - {fileID: 11400000, guid: 11bdca65469cd19438129b0bccdca10b, type: 2}
+  goldReward: 0
   isMandatory: 0
