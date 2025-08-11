@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using TMPro;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -66,6 +65,12 @@ public class QuestUI : MonoBehaviour
 
         // 5) 화면에 표시 & DayManager 호출
         testResultText.text = success ? "성공!" : "실패!";
+
+        if(success)
+            FindObjectOfType<SFXPlayer>().PlaySFX(2);
+        else
+            FindObjectOfType<SFXPlayer>().PlaySFX(3);
+
         Debug.Log($"[Combine] 성공 여부: {success}");
         DayManager.Instance.OnQuestAttempted(success);
     }

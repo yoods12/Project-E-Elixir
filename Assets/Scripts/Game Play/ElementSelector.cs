@@ -6,13 +6,11 @@ using UnityEngine.UI;
 public class ElementSelector : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private ElementSO element;
-    [SerializeField] private Text countText;
 
     private static Dictionary<ElementSO, int> selectedCounts = new Dictionary<ElementSO, int>();
 
     void Start()
     {
-        UpdateCountUI();
         CraftingUI.UpdateSlots(GetSelectedElements());
     }
 
@@ -29,7 +27,6 @@ public class ElementSelector : MonoBehaviour, IPointerClickHandler
         if (!selectedCounts.ContainsKey(element))
             selectedCounts[element] = 0;
         selectedCounts[element]++;
-        UpdateCountUI();
 
         // 슬롯 UI 업데이트
         CraftingUI.UpdateSlots(GetSelectedElements());
@@ -43,23 +40,9 @@ public class ElementSelector : MonoBehaviour, IPointerClickHandler
             if (selectedCounts[element] == 0)
                 selectedCounts.Remove(element);
         }
-        UpdateCountUI();
 
         // 슬롯 UI 업데이트
         CraftingUI.UpdateSlots(GetSelectedElements());
-    }
-
-    private void UpdateCountUI()
-    {
-        if (selectedCounts.TryGetValue(element, out int cnt) && cnt > 0)
-        {
-            countText.text = cnt.ToString();
-            countText.gameObject.SetActive(true);
-        }
-        else
-        {
-            countText.gameObject.SetActive(false);
-        }
     }
 
     public static List<ElementSO> GetSelectedElements()
@@ -76,8 +59,7 @@ public class ElementSelector : MonoBehaviour, IPointerClickHandler
         selectedCounts.Clear();
 
         // 2) 화면상의 모든 ElementSelector 를 찾아 UI 리셋
-        foreach (var sel in GameObject.FindObjectsOfType<ElementSelector>())
-            sel.UpdateCountUI();
+        //foreach (var sel in GameObject.FindObjectsOfType<ElementSelector>())
     }
 
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: H2SO4
   m_EditorClassIdentifier: 
   formula: H2SO4
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: 448037df3128dbc4a9959ca46803ba51, type: 3}
   displayName: H2SO4
   koreaName: "\uD669\uC0B0"
   dictionaryId: 0
@@ -26,3 +26,4 @@ MonoBehaviour:
     \uD63C\uD569 \uC2DC \uAC15\uD55C \uBC1C\uC5F4 \uBC18\uC751\uC774 \uC77C\uC5B4\uB09C\uB2E4. "
   - "\uB9E4\uC6B0 \uAC15\uD55C \uC0B0\uC774\uBA70, \uAE08\uC18D, \uC5FC\uAE30, \uC720\uAE30\uBB3C\uACFC
     \uBC18\uC751\uD558\uC5EC \uB2E4\uC591\uD55C \uC5FC\uACFC \uAC00\uC2A4\uB97C \uC0DD\uC131\uD55C\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 647a6632c231a594d8b8c4087e94e6b5, type: 3}

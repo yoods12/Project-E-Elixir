@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: O2
   m_EditorClassIdentifier: 
   formula: O2
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: 4adc5627bb165d74b9416d0973325f3c, type: 3}
   displayName: O2
   koreaName: "\uC0B0\uC18C"
   dictionaryId: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - "\uD654\uD559\uC801\uC73C\uB85C\uB294 \uAC15\uD55C \uC0B0\uD654\uC81C\uB85C \uC791\uC6A9\uD558\uBA70,
     \uAE08\uC18D\uACFC \uBC18\uC751\uD574 \uC0B0\uD654\uBB3C\uC744 \uD615\uC131\uD558\uACE0,
     \uC218\uC18C\uC640 \uBC18\uC751\uD558\uBA74 \uBB3C\uC774 \uC0DD\uC131\uB41C\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 8e26d5840d2937a46b27da90645c1e91, type: 3}

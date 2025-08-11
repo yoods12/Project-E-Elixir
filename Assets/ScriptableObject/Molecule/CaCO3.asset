@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CaCO3
   m_EditorClassIdentifier: 
   formula: CaCO3
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: 9afb5678a7f675741b22afd6ec4d92d2, type: 3}
   displayName: CaCO3
   koreaName: "\uD0C4\uC0B0\uCE7C\uC298"
   dictionaryId: 0
@@ -29,3 +29,4 @@ MonoBehaviour:
     \uD615\uC131\uD558\uACE0, \uBB3C\uC5D0\uB294 \uAC70\uC758 \uB179\uC9C0 \uC54A\uC9C0\uB9CC
     \uC774\uC0B0\uD654\uD0C4\uC18C\uAC00 \uC788\uC73C\uBA74 \uC6A9\uD574\uB3C4\uAC00
     \uC99D\uAC00\uD55C\uB2E4."
+  descriptionImage: {fileID: 21300000, guid: f7e2ea63b06c91741a5a467a74f8ba49, type: 3}

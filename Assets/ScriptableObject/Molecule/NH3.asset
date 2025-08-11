@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NH3
   m_EditorClassIdentifier: 
   formula: NH3
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: c4ec62136f9e2cf4eb79bbb292f65848, type: 3}
   displayName: NH3
   koreaName: "\uC554\uBAA8\uB2C8\uC544"
   dictionaryId: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - "\uC5FC\uAE30\uC131\uC744 \uB760\uBA70, \uC0B0\uACFC \uBC18\uC751\uD574 \uC554\uBAA8\uB284\uC5FC\uC744
     \uD615\uC131\uD558\uACE0, \uD658\uC6D0\uC81C\uB85C \uC791\uC6A9\uD560 \uC218
     \uC788\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 7f6f95381421cfd45b3532835e04cd87, type: 3}

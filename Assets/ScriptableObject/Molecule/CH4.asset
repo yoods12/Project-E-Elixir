@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CH4
   m_EditorClassIdentifier: 
   formula: CH4
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: 859f1def5cdb1f541a0bc4db637ed077, type: 3}
   displayName: CH4
   koreaName: "\uBA54\uD14C\uC778"
   dictionaryId: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   - "\uC0B0\uC18C\uC640 \uBC18\uC751 \uC2DC \uC644\uC804 \uC5F0\uC18C\uB418\uC5B4
     \uC774\uC0B0\uD654\uD0C4\uC18C\uC640 \uBB3C\uC744 \uC0DD\uC131\uD558\uBA70, \uC628\uC2E4\uAC00\uC2A4\uB85C\uB3C4
     \uC791\uC6A9\uD55C\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 313d461bd1a2a0c41b579ea58451be83, type: 3}

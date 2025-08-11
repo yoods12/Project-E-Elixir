@@ -39,4 +39,8 @@ public class ChemistryUI : MonoBehaviour
             hintText.text = quest.hint[currentIndex + 1];
         }
     }
+    public void OnClickSound()
+    {
+        FindObjectOfType<SFXPlayer>().PlaySFX(0);
+    }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Al2S3
   m_EditorClassIdentifier: 
   formula: Al2S3
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: 28215be4491d9264fb8473bcbd4b215b, type: 3}
   displayName: Al2S3
   koreaName: "\uD669\uD654\uC54C\uB958\uBBF8\uB284"
   dictionaryId: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - " \uBB3C\uACFC \uBC18\uC751\uD574 \uC54C\uB8E8\uBBF8\uB284 \uC218\uC0B0\uD654\uBB3C\uACFC
     \uD669\uD654\uC218\uC18C(H\u2082S)\uB97C \uC0DD\uC131\uD558\uBA70, \uACF5\uAE30
     \uC911\uC5D0\uC11C\uB294 \uBD88\uC548\uC815\uD558\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 75d6544f7f799e14f999aba6018ef0dc, type: 3}

@@ -11,5 +11,6 @@ public class MoleculeSO : ScriptableObject
     public string koreaName; // 한글 이름
 
     public int dictionaryId; // 사전에서의 ID
-    public List<string> description; 
+    public List<string> description;
+    public Sprite descriptionImage;
 }

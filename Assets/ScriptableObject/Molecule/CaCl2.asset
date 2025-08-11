@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CaCl2
   m_EditorClassIdentifier: 
   formula: CaCl2
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: d7f56e1743d678741942cd506ec2af7a, type: 3}
   displayName: CaCl2
   koreaName: "\uC5FC\uD654\uCE7C\uC298"
   dictionaryId: 0
@@ -26,3 +26,4 @@ MonoBehaviour:
     \uC798 \uB179\uC544 \uBC1C\uC5F4 \uBC18\uC751\uC744 \uC77C\uC73C\uD0A8\uB2E4. "
   - "\uAC15\uD55C \uC774\uC628 \uACB0\uD569\uC131 \uBB3C\uC9C8\uB85C, \uC218\uC6A9\uC561\uC5D0\uC11C
     Ca\uC640 Cl \uC774\uC628\uC73C\uB85C \uD574\uB9AC\uB41C\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 8ec3492c09e998049b1fdd23fb73402e, type: 3}

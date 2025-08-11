@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DayManager : MonoBehaviour
 {
@@ -9,19 +11,19 @@ public class DayManager : MonoBehaviour
     [SerializeField] public QuestData[] allQuests;
 
     [SerializeField] private int dailyQuestCount = 3;
-    [SerializeField] private float completedWeight = 0.2f;
-    [SerializeField] private float uncompletedWeight = 1f;
+    [SerializeField] private float completedWeight = 0.05f;
+    [SerializeField] private float uncompletedWeight = 2f;
 
     [SerializeField] private List<QuestData> level1MandatoryQuests; // 레벨 1 퀘스트
     [SerializeField] private List<QuestData> level2MandatoryQuests; // 레벨 2 퀘스트
     //[SerializeField] private List<QuestData> levelMandatory3Quests; // 레벨 3 퀘스트
 
-    private int currentLevel = 1; // 현재 레벨 (1로 시작)
     private int currentday = 1; // 현재 날짜 (1로 시작)
     private List<QuestData> todaysQuests;
     private Dictionary<QuestData, bool> todaysResults;
     private int currentQuestIndex;
-
+    public int currentLevel { get; private set; } = 1;
+    public event Action<int> OnLevelChanged;
     private void Awake()
     {
         // 싱글톤 설정
@@ -32,6 +34,9 @@ public class DayManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += (_, __) => BroadcastLevel();
+        FindObjectOfType<BGMPlayer>().PlayBGM(0);
     }
 
     /// <summary>
@@ -58,20 +63,28 @@ public class DayManager : MonoBehaviour
 
         BeginDay();
         SceneLoader.Instance.LoadChemistryScene();
+
+        FindObjectOfType<BGMPlayer>().PlayBGM(1);
     }
 
     /// <summary>
     /// 이어하기: 저장된 레벨로 시작
     /// </summary>
-    public void StartContinue(int savedLevel)
+    public void StartContinue(int savedLevel, int day)
     {
+        currentday = day;
         currentLevel = savedLevel;
+        SaveManager.Instance.ApplyCompletedToSO(allQuests); // ← 추가
         BeginDay();
         SceneLoader.Instance.LoadChemistryScene();
+        FindObjectOfType<BGMPlayer>().PlayBGM(1);
+
     }
 
     private void BeginDay()
     {
+        SaveManager.Instance.ApplyCompletedToSO(allQuests);
+
         // 1) 오늘의 퀘스트 뽑기
         var candidates = new List<QuestData>();
         foreach (var q in allQuests)
@@ -85,7 +98,7 @@ public class DayManager : MonoBehaviour
             foreach (var c in candidates)
                 totalW += c.isCompleted ? completedWeight : uncompletedWeight;
 
-            float r = Random.value * totalW;
+            float r = UnityEngine.Random.value * totalW;
             float acc = 0;
             int sel = 0;
             for (int j = 0; j < candidates.Count; j++)
@@ -139,85 +152,90 @@ public class DayManager : MonoBehaviour
         {   
             Debug.Log("오늘의 퀘스트가 모두 완료되었습니다! 결과 씬으로 넘어갑니다.");
             SceneLoader.Instance.LoadResultScene(); // 결과 씬으로 이동
+            FindObjectOfType<BGMPlayer>().PlayBGM(2);
         }
     }
 
     // 결과 씬에서 데이터를 가져갈 때
     public List<QuestData> GetTodaysQuests() => new List<QuestData>(todaysQuests);
     public bool GetResult(QuestData q) => todaysResults[q];
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            SceneManager.sceneLoaded -= (_, __) => BroadcastLevel();
+    }
 
+    private void SetLevel(int newLevel)
+    {
+        if (newLevel == currentLevel) return;
+        currentLevel = newLevel;
+        SaveManager.Instance.SaveLevel(currentLevel);
+        BroadcastLevel();
+    }
+    private void BroadcastLevel()
+    {
+        OnLevelChanged?.Invoke(currentLevel);
+    }
     public void LevelCheck()
     {
-        if(currentLevel == 1)
+        if (currentLevel == 1)
         {
             bool allCleared = true;
-            for (int i= 0; i < level1MandatoryQuests.Count; i++)
-            {
-                if(!level1MandatoryQuests[i].isCompleted)
-                {
-                    allCleared = false;
-                    break;
-                }
-            }
+            foreach (var q in level1MandatoryQuests)
+                if (!q.isCompleted) { allCleared = false; break; }
+
             if (allCleared)
             {
-                currentLevel = 2;
-
-                foreach (var go in GameObject.FindGameObjectsWithTag("Level2Element"))
-                    go.SetActive(true);
-
-                Debug.Log("레벨 1 퀘스트 모두 완료! 레벨 2로 넘어갑니다.");
+                SetLevel(2); // ← 2로 상승
+                Debug.Log("레벨 1 완료! 레벨 2로.");
             }
-
         }
-        else if(currentLevel == 2)
+        else if (currentLevel == 2)
         {
             bool allCleared = true;
-            for (int i = 0; i < level2MandatoryQuests.Count; i++)
-            {
-                if (!level2MandatoryQuests[i].isCompleted)
-                {
-                    allCleared = false;
-                    break;
-                }
-            }
+            foreach (var q in level2MandatoryQuests)
+                if (!q.isCompleted) { allCleared = false; break; }
+
             if (allCleared)
             {
-                currentLevel = 2;
-
-                foreach (var go in GameObject.FindGameObjectsWithTag("Level3Element"))
-                    go.SetActive(true);
-
-                Debug.Log("레벨 2 퀘스트 모두 완료! 레벨 3로 넘어갑니다.");
+                SetLevel(3); // ← 기존 코드 버그 수정: 2가 아니라 3
+                Debug.Log("레벨 2 완료! 레벨 3로.");
             }
-
         }
     }
+
+
+
     /// <summary>
     /// 결과 씬의 Next Day 버튼에서 호출
     /// </summary>
     public void OnNextDay()
     {
-        for(int i = 0; i < todaysQuests.Count; i++)
+        for (int i = 0; i < todaysQuests.Count; i++)
         {
-            // 퀘스트 완료 여부 저장
-            SaveManager.Instance.SaveCompleted(todaysQuests[i], todaysResults[todaysQuests[i]]);
-            if( todaysResults[todaysQuests[i]] )
-            {
-                // 퀘스트 완료 시 사전 항목 해제
-                DictionaryManager.Instance.UnlockEntriesForQuest(todaysQuests[i]);
-            }
+            var q = todaysQuests[i];
+            bool completed = todaysResults[q];
+
+            // 1) SO의 isCompleted도 실제로 true로 반영
+            if (completed && !q.isCompleted)
+                q.isCompleted = true;
+
+            // 2) 저장
+            SaveManager.Instance.SaveCompleted(q, completed);
+
+            // 3) 사전 언락
+            if (completed)
+                DictionaryManager.Instance.UnlockEntriesForQuest(q);
         }
+
         currentday++;
-        // 레벨업 체크
         LevelCheck();
-        // 레벨이 올라갔으면 저장
         SaveManager.Instance.SaveLevel(currentLevel);
-        // 현재 날짜 저장
         SaveManager.Instance.SaveDay(currentday);
 
-        // 다음 날
         BeginDay();
         SceneLoader.Instance.LoadChemistryScene();
+        FindObjectOfType<BGMPlayer>().PlayBGM(1);
     }
+
 }

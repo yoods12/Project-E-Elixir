@@ -43,4 +43,12 @@ public class DictionaryUI : MonoBehaviour
             slot.Init(mol);
         }
     }
+    public void OnClickSoundindex0()
+    {
+        FindObjectOfType<SFXPlayer>().PlaySFX(0);
+    }
+    public void OnClickSoundindex1()
+    {
+        FindObjectOfType<SFXPlayer>().PlaySFX(1);
+    }
 }

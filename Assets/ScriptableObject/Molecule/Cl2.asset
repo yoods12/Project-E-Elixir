@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cl2
   m_EditorClassIdentifier: 
   formula: Cl2
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: ef83a9c110757404483b520e5660b4fb, type: 3}
   displayName: Cl2
   koreaName: "\uC5FC\uC18C"
   dictionaryId: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - "\uAC15\uD55C \uC0B0\uD654\uC81C\uB85C, \uBB3C\uACFC \uBC18\uC751\uD558\uC5EC
     \uC5FC\uC0B0(HCl)\uACFC \uCC28\uC544\uC5FC\uC18C\uC0B0(HClO)\uC744 \uC0DD\uC131\uD558\uBA70,
     \uC18C\uB3C5\uC81C\uC640 \uD45C\uBC31\uC81C\uB85C \uB110\uB9AC \uC0AC\uC6A9\uB41C\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: a7e10b8d268eaf44bb236981aff6eabd, type: 3}
