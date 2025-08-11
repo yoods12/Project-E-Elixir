@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: NaCl
   m_EditorClassIdentifier: 
   formula: NaCl
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: ef9b7ad33ed4dfc438fb61161c6c0e4d, type: 3}
   displayName: NaCl
-  koreaName: "\uC5FC\uD654\uB098\uD2B8"
+  koreaName: "\uC5FC\uD654\uB098\uD2B8\uB968"
   dictionaryId: 0
   description:
   - "\uD654\uD559\uC2DD NaCl, \uB098\uD2B8\uB968\uACFC \uC5FC\uC18C\uC758 \uD654\uD569\uBB3C,
@@ -27,3 +27,4 @@ MonoBehaviour:
   - "\uD654\uD559\uC801\uC73C\uB85C\uB294 \uC774\uC628 \uACB0\uD569 \uBB3C\uC9C8\uB85C
     \uBB3C\uC5D0 \uB179\uC73C\uBA74 Na\uC640 Cl\uC774\uC628\uC73C\uB85C \uD574\uB9AC\uB418\uBA70,
     \uC5FC\uAE30\uC640 \uBC18\uC751\uD558\uC9C0 \uC54A\uB294\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 11c5d151d81752645a677cbc20cd8125, type: 3}

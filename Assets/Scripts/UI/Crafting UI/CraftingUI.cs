@@ -55,4 +55,12 @@ public class CraftingUI : MonoBehaviour
         UpdateSlots(new List<ElementSO>());
     }
 
+    public void OnClickSoundindex0()
+    {
+        FindObjectOfType<SFXPlayer>().PlaySFX(0);
+    }
+    public void OnClickSoundindex1()
+    {
+        FindObjectOfType<SFXPlayer>().PlaySFX(1);
+    }
 }

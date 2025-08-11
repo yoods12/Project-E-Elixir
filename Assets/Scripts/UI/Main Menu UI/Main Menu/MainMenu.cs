@@ -1,4 +1,6 @@
 using JetBrains.Annotations;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,9 +21,9 @@ public class MainMenu : MonoBehaviour
         continueButton.onClick.RemoveAllListeners();
         continueButton.onClick.AddListener(OnContinue);
 
-        // 저장된 키가 없으면 Continue 비활성
         continueButton.interactable = SaveManager.Instance.HasSave();
     }
+
     private void OnNewGame()
     {
         // 1) 모든 퀘스트 클리어 플래그 초기화
@@ -32,23 +34,19 @@ public class MainMenu : MonoBehaviour
         DayManager.Instance.StartNewGame();
         // 4) Chemistry 씬으로 이동
         SceneLoader.Instance.LoadChemistryScene();
-
-
     }
+
     private void OnContinue()
     {
-        // 1) 저장된 레벨 불러와서 DayManager에 전달
         int level = SaveManager.Instance.LoadLevel();
-        DayManager.Instance.StartContinue(level);
-        // 2) Chemistry 씬으로 이동
+        int day = SaveManager.Instance.LoadDay();
+        DayManager.Instance.StartContinue(level, day);
         SceneLoader.Instance.LoadChemistryScene();
     }
-
-    public void OnClickSettings()
+    public void OnClickSound()
     {
-        Debug.Log("옵션");
+        FindObjectOfType<SFXPlayer>().PlaySFX(0);
     }
-
     public void OnClickQuit()
     {
 #if UNITY_EDITOR

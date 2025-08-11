@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: N2
   m_EditorClassIdentifier: 
   formula: N2
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: bad94f044ec97154caca4c8dad728d0a, type: 3}
   displayName: N2
   koreaName: "\uC9C8\uC18C"
   dictionaryId: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
     \uC561\uD654\uB418\uBA70, \uB0C9\uAC01\uC7AC\uB85C \uD65C\uC6A9\uB41C\uB2E4. "
   - "\uC9C8\uC0B0, \uC554\uBAA8\uB2C8\uC544 \uB4F1\uC758 \uD654\uD569\uBB3C \uD615\uD0DC\uB85C
     \uC0DD\uBB3C\uACFC \uC0B0\uC5C5\uC5D0 \uD65C\uC6A9\uB41C\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 5695dad439a582445a35e5d5de773472, type: 3}

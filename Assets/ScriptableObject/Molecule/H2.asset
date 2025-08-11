@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: H2
   m_EditorClassIdentifier: 
   formula: H2
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: 956fb053c49ac3a4a8cb38a5527e5a56, type: 3}
   displayName: H2
   koreaName: "\uC218\uC18C"
   dictionaryId: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   - "\uC218\uC18C\uC758 \uC6D0\uC790\uB294 \uAC00\uC7A5 \uAC04\uB2E8\uD55C \uC6D0\uC790\uC774\uACE0,
     \uB610 \uBD84\uC790\uB294 \uAC00\uC7A5 \uAC04\uB2E8\uD55C \uD615\uC758 \uACF5\uC720\uACB0\uD569
     \uBD84\uC790\uC774\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 38efa6b2bb1f04841aba3027deb47d9e, type: 3}

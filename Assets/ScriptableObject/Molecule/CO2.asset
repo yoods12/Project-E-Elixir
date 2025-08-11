@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CO2
   m_EditorClassIdentifier: 
   formula: CO2
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: 60d276ebc51d5144ab4999923355d668, type: 3}
   displayName: CO2
   koreaName: "\uC774\uC0B0\uD654\uD0C4\uC18C"
   dictionaryId: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - "\uD55C \uC0B0\uC131\uC744 \uB760\uBA70, \uBB3C\uACFC \uBC18\uC751\uD558\uC5EC
     \uD0C4\uC0B0\uC744 \uD615\uC131\uD558\uACE0, \uAE30\uCCB4 \uC0C1\uD0DC\uC5D0\uC11C
     \uBE44\uAD50\uC801 \uC548\uC815\uD558\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: f6e355f27770c684e8a956ea715c3fc2, type: 3}

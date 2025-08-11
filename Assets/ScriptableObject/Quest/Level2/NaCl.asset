@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NaCl
   m_EditorClassIdentifier: 
   level: 2
-  NpcName: nna
+  NpcName: Anna
   NpcIcon: {fileID: 0}
   isCompleted: 0
   hint:
@@ -25,4 +25,5 @@ MonoBehaviour:
   requiredMolecules:
   - {fileID: 11400000, guid: d40d743b56b58f3479902653ea7bc78f, type: 2}
   requiredElements: []
+  goldReward: 0
   isMandatory: 0

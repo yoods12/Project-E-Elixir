@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ad05b3fb94115499b76b173153f2a4, type: 3}
+  m_Name: Ne
+  m_EditorClassIdentifier: 
+  symbol: Ne
+  elementIcon: {fileID: 21300000, guid: f05deae2a6499d54a9f3d75357730c6e, type: 3}
+  id: 10
+  displayName: Ne
+  koreaName: "\uB124\uC628"
+  dictionaryId: 0
+  description:
+  - "\uC6D0\uC18C\uAE30\uD638 Ne, \uC6D0\uC790\uBC88\uD638 10, \uB179\uB294\uC810
+    -248.6\u202F\xB0C, \uB053\uB294\uC810 -246.0\u202F\xB0C "
+  - "\uB124\uC628\uC740 \uBE44\uD65C\uC131 \uAE30\uCCB4 \uC6D0\uC18C\uB85C, \uB300\uAE30
+    \uC911\uC5D0 \uC18C\uB7C9 \uC874\uC7AC\uD558\uBA70 \uBB34\uC0C9\xB7\uBB34\uCDE8\uC774\uB2E4. "
+  - "\uBB3C\uB9AC\uC801\uC73C\uB85C\uB294 \uC804\uAE30\uB97C \uD1B5\uD574 \uBD89\uC740\uBE5B\uC744
+    \uB0B4\uB294 \uBC29\uC804\uAD00\uC5D0 \uC4F0\uC774\uBA70, \uAD11\uACE0\uC6A9
+    \uC870\uBA85\uC5D0 \uC790\uC8FC \uC0AC\uC6A9\uB41C\uB2E4. "
+  - "\uD654\uD559\uC801\uC73C\uB85C\uB294 \uBC18\uC751\uC131\uC774 \uAC70\uC758 \uC5C6\uC73C\uBA70
+    \uB2E4\uB978 \uC6D0\uC18C\uC640 \uD654\uD569\uBB3C\uC744 \uC798 \uD615\uC131\uD558\uC9C0
+    \uC54A\uB294\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 507842fb31fb48d4fbdac51c06945408, type: 3}

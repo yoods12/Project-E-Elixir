@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: H2O
   m_EditorClassIdentifier: 
   formula: H2O
-  moleculeIcon: {fileID: 0}
+  moleculeIcon: {fileID: 21300000, guid: e2d021078a9c6994cb0fc21c392793e0, type: 3}
   displayName: H2O
   koreaName: "\uBB3C"
   dictionaryId: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - "\uADF9\uC131 \uC6A9\uB9E4\uB85C \uC791\uC6A9\uD558\uBA70, \uC0B0\xB7\uC5FC\uAE30
     \uBC18\uC751 \uBC0F \uB2E4\uC591\uD55C \uC6A9\uC9C8\uC744 \uC6A9\uD574\uC2DC\uD0AC
     \uC218 \uC788\uB2E4. "
+  descriptionImage: {fileID: 21300000, guid: 99db259c8e648f14ab6a97df32b4a116, type: 3}

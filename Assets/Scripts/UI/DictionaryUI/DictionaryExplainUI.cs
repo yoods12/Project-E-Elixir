@@ -10,6 +10,7 @@ public class DictionaryExplainUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI koreaName;
     [SerializeField] private TextMeshProUGUI formula;
     [SerializeField] private TextMeshProUGUI descText;
+    [SerializeField] private Image description;
 
     public void Init(DictionarySlotUI slot)
     {
@@ -18,19 +19,21 @@ public class DictionaryExplainUI : MonoBehaviour
         // 1) 슬롯에 무엇이 들어있는지 확인
         if (slot.TryGetElement(out var elem))
         {
+            description.sprite = elem.descriptionImage;
             iconImage.sprite = elem.elementIcon;
             iconImage.gameObject.SetActive(true);
-            koreaName.text = elem.koreaName;
-            formula.text = elem.symbol;
-            descText.text = BuildElementDescription(elem);
+            //koreaName.text = elem.koreaName;
+            //formula.text = elem.symbol;
+            //descText.text = BuildElementDescription(elem);
         }
         else if (slot.TryGetMolecule(out var mol))
         {
+            description.sprite = mol.descriptionImage;
             iconImage.sprite = mol.moleculeIcon;
             iconImage.gameObject.SetActive(true);
-            koreaName.text = mol.koreaName;
-            formula.text = mol.formula;
-            descText.text = BuildMoleculeDescription(mol);
+            //koreaName.text = mol.koreaName;
+            //formula.text = mol.formula;
+            //descText.text = BuildMoleculeDescription(mol);
         }
 
         gameObject.SetActive(true);
