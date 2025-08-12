@@ -30,3 +30,4 @@ MonoBehaviour:
   - "\uD654\uD559\uC801\uC73C\uB85C\uB294 4\uAC00 \uC6D0\uC18C\uB85C \uB2E4\uC591\uD55C
     \uACF5\uC720\uACB0\uD569\uC744 \uD615\uC131\uD560 \uC218 \uC788\uB2E4. "
   descriptionImage: {fileID: 21300000, guid: 6d28ec8fafbe7b3419c296cf0a1ecbe8, type: 3}
+  dictionaryIcon: {fileID: 21300000, guid: 3fd6713e1753e894896bb22104a31e77, type: 3}
