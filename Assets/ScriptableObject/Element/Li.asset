@@ -28,3 +28,4 @@ MonoBehaviour:
   - "\uACF5\uAE30\uC640 \uBB3C\uC5D0 \uC798 \uBC18\uC751\uD558\uBA70 \uACF5\uAE30
     \uC911 \uC218\uBD84\uACFC\uB3C4 \uBC18\uC751\uD55C\uB2E4. "
   descriptionImage: {fileID: 21300000, guid: f44dd95e397ab9e4a9ac214fedec1905, type: 3}
+  dictionaryIcon: {fileID: 21300000, guid: 98fb74f296f43fc4ab3d9dc474a90088, type: 3}

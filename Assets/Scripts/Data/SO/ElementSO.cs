@@ -16,4 +16,5 @@ public class ElementSO : ScriptableObject
     public int dictionaryId; // 사전에서의 ID
     public List<string> description; // 원소 설명
     public Sprite descriptionImage;
+    public Sprite dictionaryIcon;
 }

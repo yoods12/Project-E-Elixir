@@ -20,7 +20,7 @@ public class DictionaryExplainUI : MonoBehaviour
         if (slot.TryGetElement(out var elem))
         {
             description.sprite = elem.descriptionImage;
-            iconImage.sprite = elem.elementIcon;
+            iconImage.sprite = elem.dictionaryIcon;
             iconImage.gameObject.SetActive(true);
             //koreaName.text = elem.koreaName;
             //formula.text = elem.symbol;

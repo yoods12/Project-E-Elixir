@@ -28,7 +28,7 @@ public class DictionarySlotUI : MonoBehaviour
         elementRef = elem;
         moleculeRef = null;
 
-        iconImage.sprite = elem.elementIcon;
+        iconImage.sprite = elem.dictionaryIcon;
         labelText.text = elem.symbol;
 
         iconImage.gameObject.SetActive(true);

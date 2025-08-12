@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -140,6 +141,11 @@ public class DayManager : MonoBehaviour
     /// </summary>
     public void OnQuestAttempted(bool success)
     {
+        StartCoroutine(QuestAttemptRoutine(success));
+    }
+
+    private IEnumerator QuestAttemptRoutine(bool success)
+    {
         var q = GetCurrentQuest();
         todaysResults[q] = todaysResults[q] || success;
 
@@ -147,10 +153,13 @@ public class DayManager : MonoBehaviour
         if (currentQuestIndex < todaysQuests.Count)
         {
             Debug.Log($"퀘스트 {currentQuestIndex}/{todaysQuests.Count} 완료: {success}");
+            yield return new WaitForSeconds(2f); // 3초 대기
+            SceneLoader.Instance.LoadChemistryScene(); // NPC 있는 씬으로 이동
         }
         else
-        {   
+        {
             Debug.Log("오늘의 퀘스트가 모두 완료되었습니다! 결과 씬으로 넘어갑니다.");
+            yield return new WaitForSeconds(2f); // 3초 대기
             SceneLoader.Instance.LoadResultScene(); // 결과 씬으로 이동
             FindObjectOfType<BGMPlayer>().PlayBGM(2);
         }
