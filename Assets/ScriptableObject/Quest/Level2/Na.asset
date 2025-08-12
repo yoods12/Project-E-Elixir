@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   NpcName: Anna
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: 21a24d78acecb904a8482df3852ab830, type: 3}
   isCompleted: 0
   hint:
   - "\uC774\uBC88\uC5D0\uB3C4 \uC900\uBE44\uBB3C \uC0AC\uB7EC \uC654\uC5B4\uC694!"
@@ -27,4 +27,5 @@ MonoBehaviour:
   requiredMolecules: []
   requiredElements:
   - {fileID: 11400000, guid: 2f2bf015fadb01e4ea89dee7f62d3fe8, type: 2}
+  goldReward: 0
   isMandatory: 0
