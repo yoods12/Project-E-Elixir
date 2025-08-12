@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   NpcName: Gavin
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: ed246e1cabd23164098c1aaff92b8769, type: 3}
   isCompleted: 0
   hint:
   - "\uAE30\uCCB4\uB77C\uB294\uAC74 \uB108\uBB34 \uB9E4\uB825\uC801\uC774\uC9C0 \uC54A\uB098\uC694?"
@@ -25,4 +25,5 @@ MonoBehaviour:
   requiredMolecules:
   - {fileID: 11400000, guid: ab6729e9f72714643b9181f6416e03a6, type: 2}
   requiredElements: []
+  goldReward: 0
   isMandatory: 0

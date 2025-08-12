@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   NpcName: Isaac
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: 7d736ae0b0076ee44800bde7d64e5c46, type: 3}
   isCompleted: 0
   hint:
   - "\uC88B\uC740\uAC70\uC9C0, \uAC74\uAC15\uC740...."
@@ -24,4 +24,5 @@ MonoBehaviour:
   requiredMolecules:
   - {fileID: 11400000, guid: ad9d0dbd49595544eacc9afca0c5f2c9, type: 2}
   requiredElements: []
+  goldReward: 0
   isMandatory: 0

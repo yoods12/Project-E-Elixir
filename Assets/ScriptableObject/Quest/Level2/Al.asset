@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   NpcName: Martin
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: 8744c19bb48b1f0429e5ab814642c123, type: 3}
   isCompleted: 0
   hint:
   - "\uD6C8\uB828\uB54C \uBA39\uC744 \uC74C\uC2DD\uB4E4\uC774 \uBE68\uB9AC \uC0C1\uD574
@@ -28,4 +28,5 @@ MonoBehaviour:
   requiredMolecules: []
   requiredElements:
   - {fileID: 11400000, guid: 20f5175e3492a134b85c87386c816231, type: 2}
+  goldReward: 0
   isMandatory: 1

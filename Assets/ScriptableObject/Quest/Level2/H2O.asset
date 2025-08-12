@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   NpcName: Hang
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: bb11080a7ec27dc4e8b1fa89bfc46e86, type: 3}
   isCompleted: 0
   hint:
   - "\uC73C\u2026 \uBA38\uB9AC\uC57C\u2026."
@@ -25,4 +25,5 @@ MonoBehaviour:
   requiredMolecules:
   - {fileID: 11400000, guid: 03b484975106a9b4ebe93e471af81be2, type: 2}
   requiredElements: []
+  goldReward: 0
   isMandatory: 1

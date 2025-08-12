@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   NpcName: Cater
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: a4f31b4766a6b9d41a6cd2784ee8bf9d, type: 3}
   isCompleted: 0
   hint:
   - "\uC544... \uD1F4\uADFC\uD558\uACE0 \uC2F6\uB2E4..."
@@ -26,4 +26,5 @@ MonoBehaviour:
   requiredMolecules: []
   requiredElements:
   - {fileID: 11400000, guid: 68329048e24c9d94ba7f87b4b9a530a4, type: 2}
+  goldReward: 0
   isMandatory: 0

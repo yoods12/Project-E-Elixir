@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   NpcName: Laura
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: 880a4051b78a2ea46b568656bed346e9, type: 3}
   isCompleted: 0
   hint:
   - "\uC0C8\uB85C\uC6B4 \uC601\uAC10\uC774 \uB5A0\uC62C\uB790\uC5B4\uC694!"
@@ -27,4 +27,5 @@ MonoBehaviour:
   requiredMolecules: []
   requiredElements:
   - {fileID: 11400000, guid: e6f3c48f1147daa44b7b3a088b99d38c, type: 2}
+  goldReward: 0
   isMandatory: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   NpcName: Julia
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: a6ad1245b3f188447b19e90a74de57eb, type: 3}
   isCompleted: 0
   hint:
   - "\uC774\uBC88\uC5D0\uC57C\uB9D0\uB85C \uCD5C\uACE0\uC758 \uD3ED\uC8FD\uC744 \uB9CC\uB4E4\uAC70\uC5D0\uC694!"
@@ -27,4 +27,5 @@ MonoBehaviour:
   requiredMolecules:
   - {fileID: 11400000, guid: fd9185bbad6a9784388f1f20f59def40, type: 2}
   requiredElements: []
+  goldReward: 0
   isMandatory: 0

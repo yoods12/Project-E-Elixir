@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   NpcName: Edward
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: f6c60f90cbe133944ad7f1a6b3839735, type: 3}
   isCompleted: 0
   hint:
   - "\uAC70 \uC790\uB124... \uC0AC\uC5C5 \uD558\uB098 \uAC19\uC774 \uD560 \uC0DD\uAC01
@@ -27,4 +27,5 @@ MonoBehaviour:
   requiredMolecules: []
   requiredElements:
   - {fileID: 11400000, guid: ce945a929958c454b9a4f9f89ed37277, type: 2}
+  goldReward: 0
   isMandatory: 0

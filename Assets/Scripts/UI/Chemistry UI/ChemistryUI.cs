@@ -7,6 +7,7 @@ public class ChemistryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private TextMeshProUGUI npcNameText;
     [SerializeField] private TextMeshProUGUI hintText;
+    [SerializeField] private Image npcImage;
 
     [SerializeField] private Button dictionaryButton;
 
@@ -14,6 +15,7 @@ public class ChemistryUI : MonoBehaviour
     {
         var currentDay = SaveManager.Instance.LoadDay();
         var quest = DayManager.Instance.GetCurrentQuest();
+        npcImage.sprite = quest.NpcIcon;
         dayText.text = $"Day {currentDay}";
         npcNameText.text = quest.NpcName;
         hintText.text = quest.hint.Count > 0 ? quest.hint[0] : "";

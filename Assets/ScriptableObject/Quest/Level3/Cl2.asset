@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   NpcName: Brenda
-  NpcIcon: {fileID: 0}
+  NpcIcon: {fileID: 21300000, guid: e7bf93c7aa8cbad488ac2e58aba51a68, type: 3}
   isCompleted: 0
   hint:
   - "\uBC18\uAC00\uC6CC\uC694, \uB0A0\uC528\uAC00 \uCC38 \uC88B\uC8E0? \uC774\uB7F0
@@ -27,4 +27,5 @@ MonoBehaviour:
   requiredMolecules:
   - {fileID: 11400000, guid: 582349ac7ba981a4fa92fe58c14b397e, type: 2}
   requiredElements: []
+  goldReward: 0
   isMandatory: 0
