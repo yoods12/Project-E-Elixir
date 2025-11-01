@@ -19,3 +19,5 @@ MonoBehaviour:
   koreaName: "\uC9C8\uC18C"
   dictionaryId: 0
   description: []
+  descriptionImage: {fileID: 0}
+  dictionaryIcon: {fileID: 6059799596907309901, guid: 0707270a9fc8a0f40809348dafb2c0ee, type: 3}

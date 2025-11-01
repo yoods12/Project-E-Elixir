@@ -12,11 +12,11 @@ public class QuestData : ScriptableObject
     public bool isCompleted; // 퀘스트 완료 여부
 
     public List<string> hint; // 힌트
+    public List<string> repeatHint; // 반볼될때 힌트
     public List<MoleculeSO> requiredMolecules; // 요구 분자
     public List<ElementSO> requiredElements; // 요구 원소
 
-    public int goldReward; // 골드 보상
-
     public bool isMandatory; // 필수 퀘스트 여부
 
+    public List<int> arrow; // 채팅 방향 표시 0 이면 Player 1이면 NPC 2이면 Supporter
 }
