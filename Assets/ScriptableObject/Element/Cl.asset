@@ -20,3 +20,4 @@ MonoBehaviour:
   dictionaryId: 0
   description: []
   descriptionImage: {fileID: 0}
+  dictionaryIcon: {fileID: -6659611600469109033, guid: cf72975182e95e5458468beecadbda5e, type: 3}

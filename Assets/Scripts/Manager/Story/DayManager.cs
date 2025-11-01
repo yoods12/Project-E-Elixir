@@ -10,21 +10,27 @@ public class DayManager : MonoBehaviour
 
     [Header("QuestData SO 리스트 (1~3레벨, 총 32개)")]
     [SerializeField] public QuestData[] allQuests;
+    [SerializeField] public QuestData[] tutorialQuests;
 
     [SerializeField] private int dailyQuestCount = 3;
     [SerializeField] private float completedWeight = 0.05f;
     [SerializeField] private float uncompletedWeight = 2f;
 
+    [SerializeField] private List<QuestData> level0MandatoryQuests; // 레벨 0 퀘스트
     [SerializeField] private List<QuestData> level1MandatoryQuests; // 레벨 1 퀘스트
     [SerializeField] private List<QuestData> level2MandatoryQuests; // 레벨 2 퀘스트
     //[SerializeField] private List<QuestData> levelMandatory3Quests; // 레벨 3 퀘스트
 
     private int currentday = 1; // 현재 날짜 (1로 시작)
+    //private List<QuestData> tutorialQuest;
     private List<QuestData> todaysQuests;
     private Dictionary<QuestData, bool> todaysResults;
     private int currentQuestIndex;
-    public int currentLevel { get; private set; } = 1;
+    public int currentLevel { get; private set; }
     public event Action<int> OnLevelChanged;
+
+    private bool isTutorialCleared = false;
+
     private void Awake()
     {
         // 싱글톤 설정
@@ -52,7 +58,7 @@ public class DayManager : MonoBehaviour
 
         DictionaryManager.Instance.ResetDictionary();
         currentday = 1;
-        currentLevel = 1;
+        currentLevel = 0;
 
         foreach (var go in GameObject.FindGameObjectsWithTag("Level2Element"))
             go.SetActive(false);
@@ -62,7 +68,8 @@ public class DayManager : MonoBehaviour
         SaveManager.Instance.SaveLevel(currentLevel);
         SaveManager.Instance.SaveDay(currentday);
 
-        BeginDay();
+        BeginTutorial();
+        //BeginDay();
         SceneLoader.Instance.LoadChemistryScene();
 
         FindObjectOfType<BGMPlayer>().PlayBGM(1);
@@ -79,9 +86,11 @@ public class DayManager : MonoBehaviour
         BeginDay();
         SceneLoader.Instance.LoadChemistryScene();
         FindObjectOfType<BGMPlayer>().PlayBGM(1);
+    }
+    private void BeginTutorial()
+    {
 
     }
-
     private void BeginDay()
     {
         SaveManager.Instance.ApplyCompletedToSO(allQuests);
@@ -89,7 +98,7 @@ public class DayManager : MonoBehaviour
         // 1) 오늘의 퀘스트 뽑기
         var candidates = new List<QuestData>();
         foreach (var q in allQuests)
-            if (q.level <= currentLevel) candidates.Add(q);
+            if (q.level <= currentLevel && q.level > 0) candidates.Add(q);
 
         todaysQuests = new List<QuestData>();
         for (int i = 0; i < Mathf.Min(dailyQuestCount, candidates.Count); i++)
@@ -111,7 +120,6 @@ public class DayManager : MonoBehaviour
             todaysQuests.Add(candidates[sel]);
             candidates.RemoveAt(sel);
         }
-
         // 2) 결과 기록용 사전 초기화
         todaysResults = new Dictionary<QuestData, bool>();
         foreach (var q in todaysQuests)
@@ -132,7 +140,10 @@ public class DayManager : MonoBehaviour
         // 인덱스 보정
         if (currentQuestIndex < 0 || currentQuestIndex >= todaysQuests.Count)
             currentQuestIndex = 0;
-
+        if(isTutorialCleared == false)
+        {
+            return level0MandatoryQuests[0];
+        }
         return todaysQuests[currentQuestIndex];
     }
 
@@ -212,8 +223,6 @@ public class DayManager : MonoBehaviour
             }
         }
     }
-
-
 
     /// <summary>
     /// 결과 씬의 Next Day 버튼에서 호출

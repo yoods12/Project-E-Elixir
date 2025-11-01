@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
         // 2) 저장 키 삭제
         SaveManager.Instance.DeleteSave();
         // 3) DayManager 초기화 (1레벨부터)
-        DayManager.Instance.StartNewGame();
+        //DayManager.Instance.StartNewGame(); //튜토리얼끝나고 실행하도록 수정
         // 4) Chemistry 씬으로 이동
         SceneLoader.Instance.LoadChemistryScene();
     }

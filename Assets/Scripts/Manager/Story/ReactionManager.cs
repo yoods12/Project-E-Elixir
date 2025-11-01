@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class ReactionManager : MonoBehaviour
 {
-    [Header("모든 레시피 (Input → 결과 SO)")]
     [SerializeField] private ReactionRecipeSO[] allRecipes;
 
-    // key: "id1:count1,id2:count2,..." → value: ElementSO or MoleculeSO
     private Dictionary<string, ScriptableObject> recipeMap;
 
     public static ReactionManager Instance { get; private set; }
 
     private void Awake()
     {
-        // 싱글톤 설정
+        // 싱글톤
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);

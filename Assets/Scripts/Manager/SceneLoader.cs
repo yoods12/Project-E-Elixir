@@ -20,6 +20,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadChemistryScene() => SceneManager.LoadScene("Chemistry");
     public void LoadCraftingScene() => SceneManager.LoadScene("Crafting");
     public void LoadResultScene() => SceneManager.LoadScene("Result");
+
     // Dictionary 로 갈 때, 호출 직전에 현재 씬을 저장
     public void LoadDictionary()
     {
